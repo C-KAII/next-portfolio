@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "title": "IT Coordinator",
+      "company": "PLD Literacy",
+      "tasks": "Managing infrastructure, guiding cross-functional teams, and driving innovation to enhance operational efficiency and stakeholder outcomes.",
+      "tags": [
+        "API Integration",
+        "Data Analysis",
+        "ICT Security",
+        "MERN Stack",
+        "Project Management",
+        "Wordpress"
+      ],
+      "year": "2024"
+    },
+    {
+      "title": "IT Consultant",
+      "company": "Freelance",
+      "tasks": "Business analysis and development of tailored solutions, with a focus on CRM development and integrations to streamline business processes.",
+      "tags": [
+        "Business Analysis",
+        "C++",
+        "CRM Development",
+        "NextJS",
+        "Tailwind CSS",
+        "Typescript"
+      ],
+      "year": "2023"
+    },
+    {
+      "title": "Information Systems Manager",
+      "company": "Imperial Capital Group Australia",
+      "tasks": "Management of Marketing and IT teams, plan and implement new systems, foster collaboration across teams, stakeholders, and external partners.",
+      "tags": [
+        "API Integration",
+        "CRM Development",
+        "Database Management",
+        "Power BI",
+        "Project Management",
+        "Python",
+        "System Administration"
+      ],
+      "year": "2021"
+    }
+  ]
+}
