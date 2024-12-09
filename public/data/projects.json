@@ -3,7 +3,7 @@
     {
       "title": "Portfolio Website",
       "image": "/images/portfolio_hero.webp",
-      "link": "",
+      "link": "https://github.com/C-KAII/next-portfolio",
       "tags": [
         "Next.js",
         "Typescript",
