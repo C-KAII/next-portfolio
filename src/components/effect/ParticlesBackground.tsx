@@ -87,6 +87,9 @@ const ParticlesBackground: React.FC = () => {
         size: {
           value: { min: 1, max: 5 },
         },
+        // fullScreen: {
+        //   enable: false,
+        // },
       },
       detectRetina: true,
     }),

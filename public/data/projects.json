@@ -1,18 +1,6 @@
 {
   "data": [
     {
-      "title": "Portfolio Website",
-      "image": "/images/portfolio_hero.webp",
-      "link": "https://github.com/C-KAII/next-portfolio",
-      "tags": [
-        "Next.js",
-        "Typescript",
-        "Tailwind CSS",
-        "Vercel"
-      ],
-      "text": "The portfolio website you're looking at right now, with a responsive design that highlights my experience and interests."
-    },
-    {
       "title": "'Help the Robot' Pathfinding Project",
       "image": "/images/astarinput3_output.webp",
       "link": "https://github.com/C-KAII/intelligent-systems/tree/main/path-finding",
@@ -35,6 +23,18 @@
         "Graph Algorithms"
       ],
       "text": "Efficiently finding the K-shortest loopless paths in a directed graph from a source to a destination vertex."
+    },
+    {
+      "title": "Portfolio Website",
+      "image": "/images/portfolio_hero.webp",
+      "link": "https://github.com/C-KAII/next-portfolio",
+      "tags": [
+        "Next.js",
+        "Typescript",
+        "Tailwind CSS",
+        "Vercel"
+      ],
+      "text": "The portfolio website you're looking at right now, with a responsive design that highlights my experience and interests."
     }
   ]
 }

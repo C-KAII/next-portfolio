@@ -21,9 +21,6 @@ function Hero() {
             <SocialMedia size={200} />
           </div>
         </div>
-        {/* <img className="w-2/5 mobile:w-full mobile:max-w-xl object-contain self-center animate-scalepulse"
-          src="/portraitdummy.webp" alt="Portrait"
-        /> */}
       </div>
       <div className="desktop:absolute desktop:bottom-10 inset-0 flex items-end py-2 justify-center z-10">
         <Link href={"/#About"} aria-label='About' >
