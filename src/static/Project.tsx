@@ -5,12 +5,14 @@ function Project({ headline, image, text, tags, link }: { headline: string, imag
   return (
     <a href={link} aria-label={text}>
       <div className="flex flex-col transition-all hover:scale-105 scale-100 bg-opacity-20 bg-black rounded-lg max-h-max max-w-96 m-3 text-white">
-        <div className="relative w-full h-64 rounded-t-lg overflow-hidden">
+        <div className="relative w-full h-fit rounded-t-lg overflow-hidden">
           <Image
             src={image} 
             alt={text} 
-            layout="fill"
-            objectFit="fill"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: '256px' }}
           />
         </div>
         <div className="p-4">
