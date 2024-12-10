@@ -1,11 +1,17 @@
 import Project from "@/static/Project";
 import projectData from "../../../public/data/projects.json"
+import Image from "next/image";
 
 function Projects() {
   return (
     <div id="Projects" className="bg-gradient-to-r from-gradientLeft to-gradientRight">
-      <img className="w-full h-44"
-        src="/transitions/transition_grey.svg" alt="grey transition"
+      <Image
+        src="/transitions/transition_grey.svg"
+        alt="grey transition"
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: '100%', height: '176px' }}
       />
       <p className="flex text-4xl my-8 justify-center text-white font-bold">
         Featured Projects

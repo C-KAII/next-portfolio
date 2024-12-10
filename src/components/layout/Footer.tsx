@@ -1,10 +1,16 @@
 import SocialMedia from "@/static/SocialMedia";
+import Image from "next/image";
 
 function Footer() {
   return (
     <div className="bg-gradient-to-r from-gradientLeft to-gradientRight">
-      <img className="w-full h-44"
-        src="/transitions/transition_grey.svg" alt="grey transition"
+      <Image
+        src="/transitions/transition_grey.svg"
+        alt="grey transition"
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: '100%', height: '176px' }}
       />
       <footer className="flex flex-col items-center">
         <div className="pt-5">
