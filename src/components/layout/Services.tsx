@@ -37,7 +37,7 @@ function Services() {
         />
       </div>
       <p className="desktop:text-[40px] mobile:text-[24px] font-bold text-center mb-4">
-        Got a project or role in mind? Let's connect!
+        Got a project or role in mind? Let&apos;s connect!
       </p>
       <ContactBtn title={"Contact Me"} />
     </div>
