@@ -4,7 +4,8 @@ import Image from "next/image";
 
 function About() {
   return (
-    <div className="bg-slate-800" id="About">
+    <div
+      className="relative z-1 bg-slate-800" id="About">
       <Image
         src="/transitions/transition_gradient.svg"
         alt="gradient transition"

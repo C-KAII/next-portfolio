@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Services() {
   return (
-    <div id="Services" className="flex text-white min-h-full flex-col items-center bg-slate-800">
+    <div className="relative z-1 flex text-white min-h-full flex-col items-center bg-slate-800" id="Services">
       <Image
         src="/transitions/transition_gradient.svg"
         alt="gradient transition"
