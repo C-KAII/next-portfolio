@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, ReactNode } from "react";
 import { GlobalState } from "../types/types.d";
 
 const GlobalStateContext = createContext<GlobalState | undefined>(undefined);
@@ -14,7 +14,7 @@ export const useGlobalState = (): GlobalState => {
   return context;
 };
 
-export const GlobalStateProvider = ({ children }: { children: any }) => {
+export const GlobalStateProvider = ({ children }: { children: ReactNode }) => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
