@@ -8,12 +8,12 @@ import Services from "@/components/layout/Services";
 import BurgerMenu from "@/components/menu/BurgerMenu";
 import { GlobalStateProvider } from "@/contexts/GlobalStateContext";
 import Modal from "@/components/layout/Modal";
-import Layout from "@/components/layout/Layout";
+import ParticlesBackground from "@/components/effect/ParticlesBackground";
 
 export default function Home() {
   return (
     <GlobalStateProvider >
-      <Layout>
+      <ParticlesBackground>
         <Navbar />
         <Modal />
         <BurgerMenu />
@@ -22,7 +22,7 @@ export default function Home() {
         <Projects />
         <Services />
         <Footer />
-      </Layout>
+      </ParticlesBackground>
     </GlobalStateProvider>
   );
 }

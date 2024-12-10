@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
@@ -8,7 +10,11 @@ import {
 } from "@tsparticles/engine";
 import { loadFull } from "tsparticles";
 
-const ParticlesBackground: React.FC = () => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const ParticlesBackground: React.FC<LayoutProps> = ({ children }) => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -25,6 +31,7 @@ const ParticlesBackground: React.FC = () => {
 
   const options: ISourceOptions = useMemo(
     () => ({
+      fullScreen: { enable: true, zIndex: 0 },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -87,9 +94,6 @@ const ParticlesBackground: React.FC = () => {
         size: {
           value: { min: 1, max: 5 },
         },
-        // fullScreen: {
-        //   enable: false,
-        // },
       },
       detectRetina: true,
     }),
@@ -98,11 +102,14 @@ const ParticlesBackground: React.FC = () => {
 
   if (init) {
     return (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
+      <div id="particle-background">
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={options}
+        />
+        {children}
+      </div>
     );
   }
 
