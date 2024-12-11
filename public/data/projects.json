@@ -1,6 +1,18 @@
 {
   "data": [
     {
+      "title": "Capstone Project - Data Labelling using Generative AI",
+      "image": "/images/python_code.webp",
+      "link": "https://github.com/C-KAII/cybersecurity-data-labelling-with-gen-ai",
+      "tags": [
+        "Cybersecurity",
+        "Python",
+        "Generative AI",
+        "Research"
+      ],
+      "text": "This project and report explores the application of generative AI for data labelling in intrusion detection systems (IDS) within Internet of Things (IOT) environment."
+    },
+    {
       "title": "'Help the Robot' Pathfinding Project",
       "image": "/images/astarinput3_output.webp",
       "link": "https://github.com/C-KAII/intelligent-systems/tree/main/path-finding",
