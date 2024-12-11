@@ -32,7 +32,8 @@
         "Next.js",
         "Typescript",
         "Tailwind CSS",
-        "Vercel"
+        "Vercel",
+        "SendGrid"
       ],
       "text": "The portfolio website you're looking at right now, with a responsive design that highlights my experience and interests."
     }
