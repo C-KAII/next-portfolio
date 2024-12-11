@@ -25,7 +25,7 @@ function Contact() {
 
   // Validation check method
   const handleValidation = (): boolean => {
-    let tempErrors: Errors = {};
+    const tempErrors: Errors = {};
     let isValid = true;
 
     if (fullname.length <= 0) {
@@ -95,7 +95,7 @@ function Contact() {
       <section className="flex items-center justify-center h-screen">
         <div className="text-center">
           <h2 className="text-2xl font-semibold text-white">Thank you for your message!</h2>
-          <p className="text-white mt-2">I'll get back to you soon.</p>
+          <p className="text-white mt-2">I&apos;ll get back to you soon.</p>
         </div>
       </section>
     );

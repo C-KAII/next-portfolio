@@ -3,9 +3,16 @@ import sendgrid from "@sendgrid/mail";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
 
+interface EmailBody {
+  fullname: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    const body: EmailBody = await req.json();
 
     await sendgrid.send({
       to: "chambers.user@gmail.com",
@@ -31,10 +38,21 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true, message: "Email sent successfully" });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    let errorMessage = "An unknown error occurred.";
+    let statusCode = 500;
+
+    // Refine the error type
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    if ((error as { statusCode?: number }).statusCode) {
+      statusCode = (error as { statusCode?: number }).statusCode!;
+    }
+
     return NextResponse.json(
-      { success: false, error: error.message },
-      { status: error.statusCode || 500 }
+      { success: false, error: errorMessage },
+      { status: statusCode }
     );
   }
 }
