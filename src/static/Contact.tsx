@@ -53,41 +53,54 @@ function Contact() {
   // Handling form submit
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
+
     const isValidForm = handleValidation();
+    if (!isValidForm) return;
 
-    if (isValidForm) {
-      setButtonText("Sending");
-      try {
-        const res = await fetch("/api/sendgrid", {
-          body: JSON.stringify({
-            fullname,
-            email,
-            subject,
-            message,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-        });
+    setButtonText("Sending");
 
-        const { error } = await res.json();
-        if (error) {
-          console.log(error);
-          setShowFailureMessage(true);
-          setButtonText("Send");
-          return;
-        }
-        setIsSubmitted(true);
-        setShowFailureMessage(false);
-      } catch (err) {
-        console.error("Submission error:", err);
-        setShowFailureMessage(true);
-      } finally {
-        setButtonText("Send");
+    try {
+      // Load reCAPTCHA script dynamically if not already loaded
+      if (!window.grecaptcha) {
+        const script = document.createElement("script");
+        script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+        document.body.appendChild(script);
+        await new Promise((resolve) => (script.onload = resolve));
       }
+
+      // Execute reCAPTCHA v3
+      const token = await window.grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+        { action: "submit" }
+      );
+
+      const res = await fetch("/api/contact-form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullname,
+          email,
+          subject,
+          message,
+          recaptchaToken: token,
+        }),
+      });
+
+      const { success, error } = await res.json();
+      if (success) {
+        setIsSubmitted(true);
+      } else {
+        console.error(error);
+        setShowFailureMessage(true);
+      }
+    } catch (err) {
+      console.error(err);
+      setShowFailureMessage(true);
+    } finally {
+      setButtonText("Send");
     }
-    console.log(fullname, email, subject, message);
   };
 
   if (isSubmitted) {
@@ -164,14 +177,38 @@ function Contact() {
               placeholder="Leave a message...">
             </textarea>
           </div>
-          <button
-            type="submit"
-            className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-gray-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-          >
-            {buttonText}
-          </button>
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-gray-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            >
+              {buttonText}
+            </button>
+          </div>
           {showFailureMessage && <p className="text-red-500 mt-2">Failed to send message. Please try again later.</p>}
         </form>
+        <p className="mt-4 text-xs text-gray-300 text-center">
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            Terms of Service
+          </a>{" "}
+          apply.
+        </p>
+
       </div>
     </section>
   );

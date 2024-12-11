@@ -13,6 +13,7 @@
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "@vercel/speed-insights": "^1.1.0",
+    "axios": "^1.7.9",
     "next": "15.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -20,6 +21,7 @@
     "tsparticles": "^3.7.1"
   },
   "devDependencies": {
+    "@types/grecaptcha": "^3.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

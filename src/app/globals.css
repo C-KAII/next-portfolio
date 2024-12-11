@@ -29,3 +29,7 @@ body {
 * {
   scroll-behavior: smooth !important;
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
