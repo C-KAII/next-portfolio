@@ -5,8 +5,8 @@ function Footer() {
   return (
     <div className="bg-gradient-to-r from-gradientLeft to-gradientRight">
       <Image
-        src="/transitions/transition_grey.svg"
-        alt="grey transition"
+        src="/transitions/transition_grey_to_gradient.svg"
+        alt="grey to gradient transition"
         width={0}
         height={0}
         sizes="100vw"

@@ -56,10 +56,10 @@ const ParticlesBackground: React.FC<LayoutProps> = ({ children }) => {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: "#1E293B",
         },
         links: {
-          color: "#ffffff",
+          color: "#1E293B",
           distance: 150,
           enable: true,
           opacity: 0.5,

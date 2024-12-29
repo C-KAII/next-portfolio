@@ -1,18 +1,9 @@
 import Service from "@/static/Service";
 import ContactBtn from "../menu/elements/ContactBtn";
-import Image from "next/image";
 
 function Services() {
   return (
     <div className="relative z-1 flex text-white min-h-full flex-col items-center bg-slate-800" id="Services">
-      <Image
-        src="/transitions/transition_gradient.svg"
-        alt="gradient transition"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{ width: '100%', height: '176px' }}
-      />
       <p className="flex text-4xl my-8 justify-center text-white font-bold">
         Services
       </p>

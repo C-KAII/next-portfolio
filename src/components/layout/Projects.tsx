@@ -6,8 +6,8 @@ function Projects() {
   return (
     <div id="Projects" className="bg-gradient-to-r from-gradientLeft to-gradientRight">
       <Image
-        src="/transitions/transition_grey.svg"
-        alt="grey transition"
+        src="/transitions/transition_grey_to_gradient.svg"
+        alt="grey to gradient transition"
         width={0}
         height={0}
         sizes="100vw"
@@ -38,6 +38,14 @@ function Projects() {
           See more on Github
         </a>
       </div>
+      <Image
+        src="/transitions/transition_gradient_to_grey.svg"
+        alt="gradient to grey transition"
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: '100%', height: '176px' }}
+      />
     </div>
   );
 }
